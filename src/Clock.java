@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Cloth {
+public class Clock {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> list = new ArrayList();
 		list.add(1);
 		list.add(9);
-		list.add(9);
+		list.add(1);
 		list.add(5);
 		
 		System.out.println(BigestHourOnDigitalClock(list));
@@ -24,11 +24,11 @@ public class Cloth {
 			temp = CheckForBigestNumber(list, 3);
 			if(temp==3 || temp==2 || temp==1 || temp==0)
 			{
-				result +=temp;
+				result +=temp+":";
 				list.remove(new Integer(temp));
 				
-				temp = CheckForBigestNumber(list, 4);
-				if(temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+				temp = CheckForBigestNumber(list, 5);
+				if( temp == 5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
 				{
 					result +=temp;
 					list.remove(new Integer(temp));
@@ -64,11 +64,11 @@ public class Cloth {
 			temp = CheckForBigestNumber(list, 9);
 			if(temp==9 || temp==8 || temp==7 || temp==6 || temp==5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
 			{
-				result +=temp;
+				result +=temp+":";
 				list.remove(new Integer(temp));
 				
-				temp = CheckForBigestNumber(list, 4);
-				if(temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+				temp = CheckForBigestNumber(list, 5);
+				if( temp == 5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
 				{
 					result +=temp;
 					list.remove(new Integer(temp));
