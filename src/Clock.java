@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Clock {
 
 	public static void main(String[] args) {
-		ArrayList<Integer> list = new ArrayList();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 		list.add(1);
 		list.add(9);
 		list.add(1);
