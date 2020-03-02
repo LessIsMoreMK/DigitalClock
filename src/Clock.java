@@ -4,13 +4,12 @@ public class Clock {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.add(1);
-		list.add(9);
-		list.add(1);
-		list.add(5);
+		list.add(0);
+		list.add(0);
+		list.add(0);
+		list.add(2);
 		
 		System.out.println(BigestHourOnDigitalClock(list));
-
 	}
 	public static String BigestHourOnDigitalClock(ArrayList<Integer> list)
 	{
@@ -22,19 +21,19 @@ public class Clock {
 			list.remove(new Integer(temp));
 			
 			temp = CheckForBigestNumber(list, 3);
-			if(temp==3 || temp==2 || temp==1 || temp==0)
+			if(temp<=3 && temp>=0)
 			{
 				result +=temp+":";
 				list.remove(new Integer(temp));
 				
 				temp = CheckForBigestNumber(list, 5);
-				if( temp == 5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+				if(temp>=0 && temp<=5)
 				{
 					result +=temp;
 					list.remove(new Integer(temp));
 					
 					temp = CheckForBigestNumber(list, 9);
-					if(temp==9 || temp==8 || temp==7 || temp==6 || temp==5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+					if(temp>=0 && temp<=9)
 					{
 						result +=temp;
 					}
@@ -62,19 +61,19 @@ public class Clock {
 			list.remove(new Integer(temp));
 			
 			temp = CheckForBigestNumber(list, 9);
-			if(temp==9 || temp==8 || temp==7 || temp==6 || temp==5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+			if(temp>=0 && temp<=9)
 			{
 				result +=temp+":";
 				list.remove(new Integer(temp));
 				
 				temp = CheckForBigestNumber(list, 5);
-				if( temp == 5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+				if(temp>=0 && temp<=5)
 				{
 					result +=temp;
 					list.remove(new Integer(temp));
 					
 					temp = CheckForBigestNumber(list, 9);
-					if(temp==9 || temp==8 || temp==7 || temp==6 || temp==5 || temp==4 || temp==3 || temp==2 || temp==1 || temp==0)
+					if(temp>=0 && temp<=9)
 					{
 						result +=temp;
 					}
