@@ -8,111 +8,85 @@ public class Clock {
 		list.add(0);
 		list.add(0);
 		list.add(2);
-		
+
 		System.out.println(BigestHourOnDigitalClock(list));
 	}
-	public static String BigestHourOnDigitalClock(ArrayList<Integer> list)
-	{
+
+	public static String BigestHourOnDigitalClock(ArrayList<Integer> list) {
 		String result = "";
 		int temp = CheckForBigestNumber(list, 2);
-		if(temp==2)
-		{
-			result +=temp;
+		if (temp == 2) {
+			result += temp;
 			list.remove(new Integer(temp));
-			
+
 			temp = CheckForBigestNumber(list, 3);
-			if(temp<=3 && temp>=0)
-			{
-				result +=temp+":";
+			if (temp <= 3 && temp >= 0) {
+				result += temp + ":";
 				list.remove(new Integer(temp));
-				
+
 				temp = CheckForBigestNumber(list, 5);
-				if(temp>=0 && temp<=5)
-				{
-					result +=temp;
+				if (temp >= 0 && temp <= 5) {
+					result += temp;
 					list.remove(new Integer(temp));
-					
+
 					temp = CheckForBigestNumber(list, 9);
-					if(temp>=0 && temp<=9)
-					{
-						result +=temp;
-					}
-					else
-					{
+					if (temp >= 0 && temp <= 9) {
+						result += temp;
+					} else {
 						System.out.println("Cannot create clock hour.");
 						return "";
 					}
-				}
-				else
-				{
+				} else {
 					System.out.println("Cannot create clock hour.");
 					return "";
 				}
-			}
-			else
-			{
+			} else {
 				System.out.println("Cannot create clock hour.");
 				return "";
 			}
-		}
-		else if(temp==1 || temp==0)
-		{
-			result +=temp;
+		} else if (temp == 1 || temp == 0) {
+			result += temp;
 			list.remove(new Integer(temp));
-			
+
 			temp = CheckForBigestNumber(list, 9);
-			if(temp>=0 && temp<=9)
-			{
-				result +=temp+":";
+			if (temp >= 0 && temp <= 9) {
+				result += temp + ":";
 				list.remove(new Integer(temp));
-				
+
 				temp = CheckForBigestNumber(list, 5);
-				if(temp>=0 && temp<=5)
-				{
-					result +=temp;
+				if (temp >= 0 && temp <= 5) {
+					result += temp;
 					list.remove(new Integer(temp));
-					
+
 					temp = CheckForBigestNumber(list, 9);
-					if(temp>=0 && temp<=9)
-					{
-						result +=temp;
-					}
-					else
-					{
+					if (temp >= 0 && temp <= 9) {
+						result += temp;
+					} else {
 						System.out.println("Cannot create clock hour.");
 						return "";
 					}
-				}
-				else
-				{
+				} else {
 					System.out.println("Cannot create clock hour.");
 					return "";
 				}
-			}
-			else
-			{
+			} else {
 				System.out.println("Cannot create clock hour.");
 				return "";
 			}
-		}
-		else
-		{
+		} else {
 			System.out.println("Cannot create clock hour.");
 			return "";
 		}
-		
+
 		return result;
 	}
-	public static int CheckForBigestNumber(ArrayList<Integer> list, int bigestPossibleNumber)
-	{
-		int result =-1;
-		for(int i=bigestPossibleNumber; i>=0; i--)
-		{
-			for(int j=0; j<list.size();j++)
-			{
-				if(list.get(j)==i)
-				{
-					result=i;
+
+	public static int CheckForBigestNumber(ArrayList<Integer> list, int bigestPossibleNumber) {
+		int result = -1;
+		for (int i = bigestPossibleNumber; i >= 0; i--) {
+			for (int j = 0; j < list.size(); j++) {
+				if (list.get(j) == i) {
+					result = i;
 					return result;
 				}
 			}
